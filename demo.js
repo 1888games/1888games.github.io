@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // SPDX-FileCopyrightText: Copyright 2021 Michael Karl Franzl <public.michael@franzl.name>
 
-import 'webdsky';
+import webdsky from './webdsky/webDSKY.js';
 
 import WebAGC from './src/webAGC.js';
 import AGCErasableMemory from './agc_erasable_memory.js';
