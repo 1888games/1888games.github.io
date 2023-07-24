@@ -3,7 +3,33 @@
 <html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     
-    <title>Online Apollo Guidance Computer Simulator</title>
+    <title>Niner 2048er on the Online Apollo Guidance Computer Simulator</title>
+
+
+
+    <div style="position: relative; left: 100px; top: 30px; width: 760px;  background-color: #EEEEEE;">
+        <h2>
+        Play Niner 2048er on the Apollo Guidance Computer!
+    </h2>
+
+On this page you can play Niner 2048er, a port of the mobile game 2048 for the AGC. As there isn't room on the display for 2, 4, 6, 8 etc, the aim of the game is to create a single '9' digit.
+<br></br>
+
+To start the game, press any key on the control panel.
+<br></br>
+
+
+Two numbers (0 or 1) will appear in the 3x5 grid. Use the 2, 4, 6, and 8 keys to shift all numbers in that direction. After each move, a new number that is either 0 or 1 will appear in a random position of the grid.
+<br></br> 
+
+When two identical numbers crash into each other, they combine to create a number that is one higher. Keep repeating this process in order to generate higher numbers until you reach the magic 9!
+<br></br>
+
+
+
+
+</div>
+
     <style>
         @font-face {
             font-family: seven;
@@ -120,14 +146,14 @@
   </head>
   <body>
 
-<div style="position: relative; left: 100px; top: 0; width: 760px;">
+<div style="position: relative; left: 100px; top: 10px; width: 760px;">
     <div id="warning" style="width:740px; border:2px solid black; display:none; margin:10px; padding: 5px;"></div>
 
     <h2>
         Moonjs: An Online Apollo Guidance Computer (AGC) Simulator
     </h2>
     <hr>
-    <a href="http://svtsim.com/moonjs/checklist.html" target="_blank">Launch checklist</a>
+ 
 </div>
 
 <div style="position: relative; left: 0px; top: 0; width: 800px; height: 500px;">    
@@ -220,101 +246,15 @@ AGC was the main computer system of the Apollo program that successfully landed 
 </p><p>
 Astronauts interacted with AGC by using DSKY, a combination of 7-segment numerical displays, indicator lights and a simple keypad, which is simulated on this page. 
 
-</p><div><img src="./agc_files/Apollo_DSKY_interface.svg.png"></div>
 
-The simulated DSKY communicates with a simulated AGC, which in turn runs a copy of Colossus 249, the flight software that flew on the Apollo 9 Command Module. 
+The simulated DSKY communicates with a simulated AGC, which on this page is running a version of the mobile game 2048. 
 
-DSKY human interface was built around the concept of <i>Verbs</i> and <i>Nouns</i>. For example, Verb 06 can be used to display the value of near 100 different memory locations selected based on the given Noun. 
-
-<h4>Some Examples Codes:</h4>
-    <ul>
-        <li>Test the DSKY lamps (digits and indicators) by entering 
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">3</button>
-                <button class="tinykey">5</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button>
-            </span>.            
-        </li>
-        <li>Try 
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">1</button>
-                <button class="tinykey">6</button>
-                <button class="tinykey" style="width: 50px;">NOUN</button> 
-                <button class="tinykey">6</button>
-                <button class="tinykey">5</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button>
-            </span>. 
-            This command monitors the current time. The lower 5-digit display shows seconds,
-            the middle one minutes and the topmost one hours elapsed since AGC powered up.
-        </li>
-        <li>Start program P00, the idle program, by entering 
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">3</button>
-                <button class="tinykey">7</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button> 
-                <button class="tinykey">0</button>
-                <button class="tinykey">0</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button>
-            </span>. 
-        </li>
-        <li>Enter 
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">9</button>
-                <button class="tinykey">1</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button> 
-            </span>.
-            It shows the checksum of the first bank of the fixed memory (the so-called core-ropes in AGC terminology).
-            The fixed memory is divided into 38 banks, each containing 1024 (1K) 15-bits words. The top 5-digit display 
-            shows the checksum in octal, which should be either the bank number or its 1-complement (e.g., for bank 3 
-            either a value of 00003 or 77774 is acceptable). The middle row is the bank number and the third row is a 
-            <i>bugger word</i> appended to the end of each bank to make the checksum the correct value. By entering
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">3</button>
-                <button class="tinykey">3</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button> 
-            </span>
-            or pressing 
-            <span>
-                <button class="tinykey" style="width: 50px;">PRO</button>
-            </span>,
-            you can get the statistics for the next bank.
-        </li>
-        <li>Let's try some spaceflight related programs! Enter
-            <span>
-                <button class="tinykey" style="width: 50px;">VERB</button>
-                <button class="tinykey">0</button>
-                <button class="tinykey">6</button>
-                <button class="tinykey" style="width: 50px;">NOUN</button>
-                <button class="tinykey">6</button>
-                <button class="tinykey">2</button>
-                <button class="tinykey" style="width: 50px;">ENTR</button> 
-            </span>.
-            It shows the current velocity (top row), altitude rate (middle row) and altitude (bottom row). 
-            Unfortunately, we are not going to space today, so all three show 00000 and will continue to
-            do so. During an actual launch (or a simulated one), they would update with current values. 
-            If instead of Verb 06, we use Verb 16, the same values are shown and updated constantly until 
-            a different command is entered. In fact, this program was used during the boost phase of Saturn V 
-            launches to allow astronauts monitor the progress of the launch vehicle. 
-        </li>
-    </ul>
     For many more examples and details about AGC, its programming and operation, two great sources are
     the excellent <a href="http://www.ibiblio.org/apollo/">Virtual AGC</a> website by Ronald Burkey and 
     "The Apollo guidance computer : architecture and operation" by Frank O'Brien. The Wikipedia 
     <a href="http://en.wikipedia.org/wiki/Apollo_Guidance_Computer">page</a> for AGC also contains 
     lots of useful information and a comprehensive bibliography. 
 
-<h4>Why Javascript?</h4>
-    Recent advances in the javascript language - such as optimized engines, ahead-of-time (AOT) compilation, and asm.js - 
-    make it possible to write computationally extensive applications in javascript. My previous experience
-    with online javascript-based simulation (<a href="http://svtsim.com/moonjs/svtsim.com/svtsim.html">svtsim</a> and <a href="http://svtsim.com/moonjs/svtsim.com/hemosim.html">hemosim</a>)
-    was very positive and convinced me of the suitablity of the HTML5/javascript combination in writing 
-    portable, easy-to-use simulators. <b>Moonjs</b> is the logical next step that uses Emscripten compiler to convert
-    existing C code into asm.js, a highly-optimizable subset of javascript. 
 <footer>
     <hr> 
     @2013-2019 Shahriar Iravanian (<a href="mail://siravan@svtsim.com">siravan@svtsim.com</a>) 
