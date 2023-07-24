@@ -3,7 +3,7 @@
 
 import 'webdsky';
 
-import WebAGC from '../src/webAGC.js';
+import WebAGC from './src/webAGC.js';
 import AGCErasableMemory from './agc_erasable_memory.js';
 import AGCChannel from './agc_channel.js';
 import DskyPcKeyboardInterface from './dsky_pc_keyboard_interface.js';
