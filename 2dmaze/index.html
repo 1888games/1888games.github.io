@@ -411,6 +411,14 @@ Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes pla
                 status11 = val & 0x0200;
                 flag |= 8;                
             }
+
+ 		$('#vel').css('background-color', status8 & 0x0004 ? '#ffc200' : '#888888');
+                $('#no_att').css('background-color', status8 & 0x0008 ? '#ffffff' : '#888888');
+                $('#alt').css('background-color', status8 & 0x0010 ? '#ffc200' : '#888888');
+                $('#gimbal_lock').css('background-color', status8 & 0x0020 ? '#ffc200' : '#888888');
+                $('#tracker').css('background-color', status8 & 0x0080 ? '#ffc200' : '#888888');
+                $('#prog').css('background-color', status8 & 0x0100 ? '#ffc200' : '#888888');        
+
             return flag;
         }
 
