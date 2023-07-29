@@ -3,32 +3,57 @@
 <html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     
-    <title>Niner 2048er on the Online Apollo Guidance Computer Simulator</title>
+    <title>"2D Monster Maze on the Online Apollo Guidance Computer</title>
 
 
 
     <div style="position: relative; left: 100px; top: 30px; width: 760px;  background-color: #EEEEEE;">
         <h1>
-        Play Niner 2048er on the Apollo Guidance Computer
+        2D Monster Maze for the Apollo Guidance Computer (1966-75)
     </h1>
 
     
         <h3>
-        By Nick Sherman of Arlasoft in 2023. V1.1.
+        Written in AGC assembly by Nick Sherman of Arlasoft in 2023. V1.0.
     </h3>
 
-On this page you can play Niner 2048er, a port of the mobile game 2048 for the AGC. As there isn't room on the display for 2, 4, 6, 8 etc, the aim of the game is to create a single '9' digit.
 
   <h2>To start the game, click any key on the control panel.</h2>
 
-Two numbers (0 or 1) will appear in the 3x5 grid. Click on the the 2, 4, 6, and 8 keys to shift all numbers in that direction. After each move, a new number that is either 0 or 1 will appear in a random position of the grid.
-<br></br> 
+  A timer will countdown from 5 while the maze is generated.
 
-When two identical numbers crash into each other, they combine to create a number that is one higher. Keep repeating this process in order to generate higher numbers until you reach the magic 9!
-<br></br>
 
-Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes playing this game in the browser possible.
-<br></br>
+  <h3>Controls:   &emsp;   2, 4, 6, 8 to move</h3>
+
+
+  You <strong>(1)</strong> are in a procedurally generated maze. The aim is to escape as quickly as possible, as your score will increase by the time that remains when you go through the exit.
+
+  <br>
+  <br>
+
+  The walls are denoted by <b>(0)</b> for inner walls and <b>(8)</b> for the outer boundary.
+    
+  <br>
+  <br>
+
+  Collect the key <b>(9)</b>  and then use it to open the exit portal <b>(7)</b>. When you have the key the 'Gimbal Lock' light will turn off.
+
+  <br>
+  <br>
+
+  Watch out for the dino, Rex <b>(4)</b>. He starts in the bottom left corner and seeks you out.
+
+  <br>
+  <br>
+
+  When he is close to finding you the 'opp err' light will flash. Be careful! His speed will increase slightly after each maze is completed.
+
+
+  <br>
+  <br>
+<br>
+  <br>
+
 
 
 
@@ -158,7 +183,7 @@ Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes pla
  
 </div>
 
-<div style="position: relative; left: 0px; top: 0; width: 800px; height: 500px;">    
+<div style="position: relative; left: 150px; top: 20px; width: 800px; height: 500px;">    
     <div style="position: absolute; left: 100px; top: 0; width: 415px; height: 485px; border: solid black 2px; background-color: #DDDDDD;">
 	    <div style="position: absolute; left: 20px; top: 10px; width: 140px; height: 280px; border: solid black 2px;">
 		    <div id="uplink_acty" class="light" style="left: 0px; top: 0px; line-height: 15px; background-color: rgb(136, 136, 136);">UPLINK<br>ACTY</div>
@@ -170,7 +195,7 @@ Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes pla
 		    <div class="light" style="left: 0px; top: 240px;">&nbsp;</div>
 	
 		    <div id="temp" class="light" style="left: 70px; top: 0px; background-color: rgb(136, 136, 136);">TEMP</div>
-		    <div id="gimball_lock" class="light" style="left: 70px; top: 40px; line-height: 15px;">GIMBALL<br>LOCK</div>
+		    <div id="gimball_lock" class="light" style="left: 70px; top: 40px; line-height: 15px;">GIMBAL<br>LOCK</div>
 		    <div id="prog" class="light" style="left: 70px; top: 80px; background-color: rgb(255, 194, 0);">PROG</div>
 		    <div id="restart" class="light" style="left: 70px; top: 120px;">RESTART</div>
 		    <div id="tracker" class="light" style="left: 70px; top: 160px; background-color: rgb(136, 136, 136);">TRACKER</div>
@@ -214,7 +239,7 @@ Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes pla
 	    </div>
     </div>
 
-    <div style="position: absolute; left: 550px; top: 0; width: 300px; height: 485px; border: solid black 2px; background-color: #DDDDDD;">
+    <div hidden style="position: absolute; left: 550px; top: 0; width: 300px; height: 485px; border: solid black 2px; background-color: #DDDDDD;">
         <span class="imulabel" style="left:10px; top:5px;">ST</span><div id="st" class="clock" style="left:50px; top:5px;">00:00:14</div>     
         <span class="imulabel" style="left:10px; top:35px;">MET</span><div id="met" class="clock" style="left:50px; top:35px;">00:00:00</div>     
         <button id="enable_ISS" style="position: absolute; right: 5px; top: 5px; width: 100px;">Enable IMU</button>
@@ -242,6 +267,9 @@ Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes pla
 </div>
 
 <div style="position: relative; left: 100px; top: 30px; width: 760px; background-color: #EEEEEE;">
+
+    Thanks to Shahriar Iravanian for this online AGC simulator MoonJS that makes playing this game in the browser possible.
+ 
 
      <h2>
         Moonjs: An Online Apollo Guidance Computer (AGC) Simulator
