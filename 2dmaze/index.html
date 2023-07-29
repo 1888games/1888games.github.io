@@ -440,12 +440,13 @@
                 flag |= 8;                
             }
 
- 		$('#vel').css('background-color', status8 & 0x0004 ? '#ffc200' : '#888888');
+ 		     $('#vel').css('background-color', status8 & 0x0004 ? '#ffc200' : '#888888');
                 $('#no_att').css('background-color', status8 & 0x0008 ? '#ffffff' : '#888888');
                 $('#alt').css('background-color', status8 & 0x0010 ? '#ffc200' : '#888888');
                 $('#gimbal_lock').css('background-color', status8 & 0x0020 ? '#ffc200' : '#888888');
                 $('#tracker').css('background-color', status8 & 0x0080 ? '#ffc200' : '#888888');
                 $('#prog').css('background-color', status8 & 0x0100 ? '#ffc200' : '#888888');        
+
 
             return flag;
         }
@@ -472,14 +473,14 @@
                 }
             }
     
-            if(flag & 2){   // also see http://klabs.org/history/history_docs/mit_docs/1709.pdf section 1.9.3
+            //if(flag & 2){   // also see http://klabs.org/history/history_docs/mit_docs/1709.pdf section 1.9.3
                 $('#vel').css('background-color', status8 & 0x0004 ? '#ffc200' : '#888888');
                 $('#no_att').css('background-color', status8 & 0x0008 ? '#ffffff' : '#888888');
                 $('#alt').css('background-color', status8 & 0x0010 ? '#ffc200' : '#888888');
                 $('#gimbal_lock').css('background-color', status8 & 0x0020 ? '#ffc200' : '#888888');
                 $('#tracker').css('background-color', status8 & 0x0080 ? '#ffc200' : '#888888');
                 $('#prog').css('background-color', status8 & 0x0100 ? '#ffc200' : '#888888');        
-            }
+           // }
 
             if(flag & 4){                
                 $('#comp_acty').css('background-color', status9 & 0x0002 ? '#ffc200' : '#888888');
